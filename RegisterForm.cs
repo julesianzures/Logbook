@@ -52,7 +52,7 @@ namespace LogBook
             File.AppendAllText(path, $"{id},{name}{Environment.NewLine}");
             nameTextBox.Clear();
             MessageBox.Show($"You are now registered. ID: {id}");
-            new loginForm().Show();
+            //new loginForm().Show();
 
         }
 

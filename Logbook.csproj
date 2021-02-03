@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EBB37431-2830-44DA-9DF5-0ED4D2E4CFA6}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>LogBook</RootNamespace>
     <AssemblyName>LogBook</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>

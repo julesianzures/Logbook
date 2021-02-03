@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
+using System.Data;
+
 
 namespace LogBook
 {
@@ -10,6 +13,24 @@ namespace LogBook
             InitializeComponent();
         }
 
+        private void dataGridViewLogHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LogHistory();
+        }
+
+        public void LogHistory()        
+        {
+            string path = $"{Environment.CurrentDirectory}\\employees.csv";
+
+            DataTable logHistoryTable = new DataTable();
+            StreamReader sr = new StreamReader(path);
+            string csvLine = sr.ReadLine();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+
+        }
         public void showLogBookForm()
         {
             new LogbookForm().Show();
@@ -18,11 +39,6 @@ namespace LogBook
         private void backButton_Click(object sender, EventArgs e)
         {
             showLogBookForm();
-        }
-
-        private void dataGridViewLogHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

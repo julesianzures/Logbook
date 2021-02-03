@@ -30,7 +30,6 @@ namespace LogBook
         private void InitializeComponent()
         {
             this.logHistoryLabel = new System.Windows.Forms.Label();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.backButton = new System.Windows.Forms.Button();
             this.dataGridViewLogHistory = new System.Windows.Forms.DataGridView();
             this.userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +39,8 @@ namespace LogBook
             this.temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastPlaceVisited = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchLabel = new System.Windows.Forms.Label();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,16 +54,6 @@ namespace LogBook
             this.logHistoryLabel.TabIndex = 3;
             this.logHistoryLabel.Text = "LOG HISTORY";
             this.logHistoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(136, 101);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.searchTextBox.Multiline = true;
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(160, 28);
-            this.searchTextBox.TabIndex = 32;
             // 
             // backButton
             // 
@@ -151,16 +142,37 @@ namespace LogBook
             this.searchLabel.TabIndex = 37;
             this.searchLabel.Text = "Search by ID:";
             // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(136, 98);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.searchTextBox.Multiline = true;
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(125, 28);
+            this.searchTextBox.TabIndex = 38;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(264, 98);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(75, 28);
+            this.searchButton.TabIndex = 39;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // logHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(627, 438);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.dataGridViewLogHistory);
             this.Controls.Add(this.backButton);
-            this.Controls.Add(this.searchTextBox);
             this.Controls.Add(this.logHistoryLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "logHistoryForm";
@@ -175,7 +187,6 @@ namespace LogBook
         #endregion
 
         private System.Windows.Forms.Label logHistoryLabel;
-        private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.DataGridView dataGridViewLogHistory;
         private System.Windows.Forms.DataGridViewTextBoxColumn userID;
@@ -185,5 +196,7 @@ namespace LogBook
         private System.Windows.Forms.DataGridViewTextBoxColumn temp;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastPlaceVisited;
         private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.TextBox searchTextBox;
+        private System.Windows.Forms.Button searchButton;
     }
 }

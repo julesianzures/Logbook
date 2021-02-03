@@ -53,6 +53,7 @@ namespace LogBook
                 if (!userFound)
                 {
                     MessageBox.Show("User not registered");
+                    userIDTextBox.Clear();
                 }
                 
                 sr.Close();

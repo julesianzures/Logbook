@@ -37,11 +37,11 @@ namespace LogBook
             this.clearValuesButton = new System.Windows.Forms.Button();
             this.viewLogHistory = new System.Windows.Forms.Button();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.tempTextBox = new System.Windows.Forms.TextBox();
             this.lastPlaceTextBox = new System.Windows.Forms.TextBox();
             this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.exitButton = new System.Windows.Forms.Button();
             this.dateLabel = new System.Windows.Forms.Label();
+            this.tempTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // informationLabel
@@ -130,7 +130,7 @@ namespace LogBook
             // datePicker
             // 
             this.datePicker.Checked = false;
-            this.datePicker.CustomFormat = "yyyy/MM/dd";
+            this.datePicker.CustomFormat = "yyyy-MM-dd";
             this.datePicker.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.datePicker.Location = new System.Drawing.Point(69, 107);
@@ -138,19 +138,9 @@ namespace LogBook
             this.datePicker.ShowCheckBox = true;
             this.datePicker.Size = new System.Drawing.Size(200, 22);
             this.datePicker.TabIndex = 29;
-            this.datePicker.Tag = "";
+            this.datePicker.Tag = "0";
             this.datePicker.Value = new System.DateTime(2021, 2, 1, 15, 32, 0, 0);
             this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
-            // 
-            // tempTextBox
-            // 
-            this.tempTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tempTextBox.Location = new System.Drawing.Point(69, 237);
-            this.tempTextBox.Margin = new System.Windows.Forms.Padding(0);
-            this.tempTextBox.Multiline = true;
-            this.tempTextBox.Name = "tempTextBox";
-            this.tempTextBox.Size = new System.Drawing.Size(125, 28);
-            this.tempTextBox.TabIndex = 31;
             // 
             // lastPlaceTextBox
             // 
@@ -165,7 +155,7 @@ namespace LogBook
             // timePicker
             // 
             this.timePicker.Checked = false;
-            this.timePicker.CustomFormat = "HH:mm:ss ";
+            this.timePicker.CustomFormat = "HH:mm:ss";
             this.timePicker.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.timePicker.Location = new System.Drawing.Point(69, 170);
@@ -174,6 +164,7 @@ namespace LogBook
             this.timePicker.ShowUpDown = true;
             this.timePicker.Size = new System.Drawing.Size(125, 22);
             this.timePicker.TabIndex = 33;
+            this.timePicker.ValueChanged += new System.EventHandler(this.timePicker_ValueChanged_1);
             // 
             // exitButton
             // 
@@ -201,17 +192,27 @@ namespace LogBook
             this.dateLabel.TabIndex = 36;
             this.dateLabel.Text = "DATE:";
             // 
+            // tempTextBox
+            // 
+            this.tempTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tempTextBox.Location = new System.Drawing.Point(69, 236);
+            this.tempTextBox.Margin = new System.Windows.Forms.Padding(0);
+            this.tempTextBox.Multiline = true;
+            this.tempTextBox.Name = "tempTextBox";
+            this.tempTextBox.Size = new System.Drawing.Size(125, 28);
+            this.tempTextBox.TabIndex = 37;
+            // 
             // LogbookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(627, 438);
+            this.Controls.Add(this.tempTextBox);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.timePicker);
             this.Controls.Add(this.lastPlaceTextBox);
-            this.Controls.Add(this.tempTextBox);
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.viewLogHistory);
             this.Controls.Add(this.clearValuesButton);
@@ -240,10 +241,10 @@ namespace LogBook
         private System.Windows.Forms.Button clearValuesButton;
         private System.Windows.Forms.Button viewLogHistory;
         private System.Windows.Forms.DateTimePicker datePicker;
-        private System.Windows.Forms.TextBox tempTextBox;
         private System.Windows.Forms.TextBox lastPlaceTextBox;
         private System.Windows.Forms.DateTimePicker timePicker;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.TextBox tempTextBox;
     }
 }
