@@ -32,15 +32,9 @@ namespace LogBook
             this.logHistoryLabel = new System.Windows.Forms.Label();
             this.backButton = new System.Windows.Forms.Button();
             this.dataGridViewLogHistory = new System.Windows.Forms.DataGridView();
-            this.userID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastPlaceVisited = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLogHistory)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,93 +68,37 @@ namespace LogBook
             this.dataGridViewLogHistory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewLogHistory.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLogHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewLogHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userID,
-            this.name,
-            this.date,
-            this.time,
-            this.temp,
-            this.lastPlaceVisited});
             this.dataGridViewLogHistory.Location = new System.Drawing.Point(37, 132);
             this.dataGridViewLogHistory.Name = "dataGridViewLogHistory";
             this.dataGridViewLogHistory.Size = new System.Drawing.Size(550, 227);
             this.dataGridViewLogHistory.TabIndex = 36;
-            // 
-            // userID
-            // 
-            this.userID.Frozen = true;
-            this.userID.HeaderText = "ID";
-            this.userID.Name = "userID";
-            this.userID.ReadOnly = true;
-            this.userID.Width = 50;
-            // 
-            // name
-            // 
-            this.name.Frozen = true;
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.Frozen = true;
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // time
-            // 
-            this.time.Frozen = true;
-            this.time.HeaderText = "Time";
-            this.time.Name = "time";
-            this.time.ReadOnly = true;
-            this.time.Width = 70;
-            // 
-            // temp
-            // 
-            this.temp.Frozen = true;
-            this.temp.HeaderText = "Temperature";
-            this.temp.Name = "temp";
-            this.temp.ReadOnly = true;
-            this.temp.Width = 70;
-            // 
-            // lastPlaceVisited
-            // 
-            this.lastPlaceVisited.Frozen = true;
-            this.lastPlaceVisited.HeaderText = "Last Place Visited";
-            this.lastPlaceVisited.Name = "lastPlaceVisited";
-            this.lastPlaceVisited.ReadOnly = true;
-            this.lastPlaceVisited.Width = 130;
-            // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchLabel.Location = new System.Drawing.Point(35, 104);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(98, 21);
-            this.searchLabel.TabIndex = 37;
-            this.searchLabel.Text = "Search by ID:";
+            this.dataGridViewLogHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLogHistory_CellContentClick_1);
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchTextBox.Location = new System.Drawing.Point(136, 98);
+            this.searchTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(37, 101);
             this.searchTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.searchTextBox.Multiline = true;
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(125, 28);
+            this.searchTextBox.Size = new System.Drawing.Size(449, 26);
             this.searchTextBox.TabIndex = 38;
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(264, 98);
+            this.searchButton.Location = new System.Drawing.Point(489, 100);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 28);
+            this.searchButton.Size = new System.Drawing.Size(98, 28);
             this.searchButton.TabIndex = 39;
-            this.searchButton.Text = "Search";
+            this.searchButton.Text = "Open CSV file";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "All files (*.*)|*.*";
+            this.openFileDialog1.Title = "Open CSV file";
             // 
             // logHistoryForm
             // 
@@ -170,7 +108,6 @@ namespace LogBook
             this.ClientSize = new System.Drawing.Size(627, 438);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.searchTextBox);
-            this.Controls.Add(this.searchLabel);
             this.Controls.Add(this.dataGridViewLogHistory);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.logHistoryLabel);
@@ -189,14 +126,8 @@ namespace LogBook
         private System.Windows.Forms.Label logHistoryLabel;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.DataGridView dataGridViewLogHistory;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn temp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastPlaceVisited;
-        private System.Windows.Forms.Label searchLabel;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

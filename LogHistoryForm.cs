@@ -13,23 +13,50 @@ namespace LogBook
             InitializeComponent();
         }
 
-        private void dataGridViewLogHistory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void LogHistory(string path)        
         {
-            LogHistory();
-        }
-
-        public void LogHistory()        
-        {
-            string path = $"{Environment.CurrentDirectory}\\employees.csv";
-
-            DataTable logHistoryTable = new DataTable();
+            DataTable logHistory = new DataTable();
+            string[] lines = File.ReadAllLines(path);
             StreamReader sr = new StreamReader(path);
-            string csvLine = sr.ReadLine();
+
+            if (lines.Length>0)
+            {
+                string firstline = lines[0];
+                string[] values = firstline.Split(',');
+
+                foreach (string headerWord in values)
+                {
+                    logHistory.Columns.Add(new DataColumn(headerWord));
+                }
+
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] dataWords = lines[i].Split(',');
+                    DataRow logHistoryRows = logHistory.NewRow();
+                    int columnIndex = 0;
+
+                    foreach (string  headerWord in values)
+                    {
+                        logHistoryRows[headerWord] = dataWords[columnIndex++];
+                    }
+                    logHistory.Rows.Add(logHistoryRows);
+                    
+                }
+
+            }
+            if(logHistory.Rows.Count>0)
+            {
+                dataGridViewLogHistory.DataSource = logHistory;
+            }
+            
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.ShowDialog();
+            searchTextBox.Text = openFileDialog1.FileName;
+            LogHistory(searchTextBox.Text);
+            
         }
         public void showLogBookForm()
         {
@@ -39,6 +66,11 @@ namespace LogBook
         private void backButton_Click(object sender, EventArgs e)
         {
             showLogBookForm();
+        }
+
+        private void dataGridViewLogHistory_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

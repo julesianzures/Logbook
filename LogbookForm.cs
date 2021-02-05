@@ -15,35 +15,49 @@ namespace LogBook
 
         private void datePicker_ValueChanged(object sender, EventArgs e)
         {
-                datePicker.Format = DateTimePickerFormat.Custom;
+            datePicker.Format = DateTimePickerFormat.Custom;
+
+            if (datePicker.Checked == true)
+            {
                 datePicker.CustomFormat = "yyyy-MM-dd";
-        
+            }
+            else 
+            {
+                datePicker.CustomFormat = "";
+            }
         }
 
         private void timePicker_ValueChanged_1(object sender, EventArgs e)
         {
-          
-                timePicker.Format = DateTimePickerFormat.Custom;
+            timePicker.Format = DateTimePickerFormat.Custom;
+
+            if (timePicker.Checked == true)
+            {
                 timePicker.CustomFormat = "HH:mm:ss";
+            }
+            else
+            {
+                timePicker.CustomFormat = "";
+            }
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+        private void addButton_Click(object sender, EventArgs e) 
         {
             if (datePicker.Checked == false 
-                && timePicker.Checked == false)
+                || timePicker.Checked == false)
             {
                 MessageBox.Show("Empty input fields. Try again.");
             }
             else if (tempTextBox.Text == ""
-                && lastPlaceTextBox.Text == "")
+                || lastPlaceTextBox.Text == "")
             {
                 MessageBox.Show("Empty input fields. Try again.");
             }
             else
             {
                 MessageBox.Show("Information added.");
+                AddInfo();
             }
-            AddInfo();
         }
 
         public void AddInfo()           

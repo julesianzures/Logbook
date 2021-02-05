@@ -33,7 +33,7 @@ namespace LogBook
             string path = $"{Environment.CurrentDirectory}\\employees.csv";
             if (!File.Exists(path))
             {
-                File.Create(path).Close(); 
+                File.Create(path).Close();
             }
             
             csv.AppendLine(name);
