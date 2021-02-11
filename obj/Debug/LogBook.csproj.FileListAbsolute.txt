@@ -17,7 +17,6 @@ C:\LogBook\bin\Debug\LogBook.pdb
 C:\LogBook\obj\Debug\Logbook.csprojAssemblyReference.cache
 C:\LogBook\obj\Debug\LogBook.logHistoryForm.resources
 C:\LogBook\obj\Debug\LogBook.LogbookForm.resources
-C:\LogBook\obj\Debug\LogBook.loginForm.resources
 C:\LogBook\obj\Debug\LogBook.Properties.Resources.resources
 C:\LogBook\obj\Debug\LogBook.RegisterForm.resources
 C:\LogBook\obj\Debug\Logbook.csproj.GenerateResource.cache
@@ -50,3 +49,6 @@ C:\Users\JulesAnzures\source\repos\LogBook\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\JulesAnzures\source\repos\LogBook\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\JulesAnzures\source\repos\LogBook\bin\Debug\System.ValueTuple.xml
 C:\Users\JulesAnzures\source\repos\LogBook\obj\Debug\Logbook.csproj.CopyComplete
+C:\Logbook\obj\Debug\LogBook.HomeForm.resources
+C:\Logbook\obj\Debug\LogBook.LoginForm.resources
+C:\Users\JulesAnzures\source\repos\Logbook\obj\Debug\LogBook.HomeForm.resources
