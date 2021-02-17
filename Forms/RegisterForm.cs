@@ -61,6 +61,7 @@ namespace LogBook
         {
             Form form = new LoginForm();
             form.Show();
+            this.Hide();
         }
     }
 }

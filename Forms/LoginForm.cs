@@ -33,6 +33,13 @@ namespace LogBook
             else 
             {
                 string path = $"{Environment.CurrentDirectory}\\employees.csv";
+                
+                if (!File.Exists(path))
+                {
+                    MessageBox.Show("No users found.");
+                    File.Create(path).Close();
+                }
+
                 using (StreamReader streamReader = new StreamReader(path))
                 {
                     string csvLine = streamReader.ReadLine();
@@ -68,6 +75,7 @@ namespace LogBook
         {
             Form form = new RegisterForm();
             form.Show();
+            this.Hide();
         }
 
         private void employeeIdTextBox_Enter(object sender, EventArgs e)
