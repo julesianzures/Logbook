@@ -69,9 +69,9 @@ namespace LogBook
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            SearchInListView();
             ConvertEmployeeCsv();
             ConvertLogCsv();
+            SearchInListView();
         }
 
         private void homeButton_Click(object sender, EventArgs e)
