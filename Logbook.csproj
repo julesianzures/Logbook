@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\TemporaryStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\RegisterForm.cs">
