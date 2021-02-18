@@ -21,12 +21,9 @@ namespace LogBook
 
             string[] csvLine = File.ReadAllLines($"{Environment.CurrentDirectory}\\employees.csv");
 
-            var employees = new List<Employee>();
-
             for (int i = 0; i < csvLine.Length; i++)
             {
                 Employee employee = new Employee(csvLine[i]);
-                employees.Add(employee);
                 employeeListView.Items.Add(employee.ToListViewItem());
             }
         }
@@ -49,11 +46,12 @@ namespace LogBook
 
         public void SearchInListView()
         {
-            foreach (ListViewItem employeeList in employeeListView.Items)
+            foreach (ListViewItem employee in employeeListView.Items)
             {
-                if (!employeeList.ToString().ToLower().Contains(searchTextBox.Text.ToLower()))
+                if (!employee.ToString().ToLower().Contains(searchTextBox.Text.ToLower()))
                 {
-                    employeeListView.Items.Remove(employeeList);
+                    Console.WriteLine(employee.ToString());
+                    employeeListView.Items.Remove(employee);
                 }
             }
 
@@ -69,8 +67,6 @@ namespace LogBook
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            ConvertEmployeeCsv();
-            ConvertLogCsv();
             SearchInListView();
         }
 
@@ -87,5 +83,13 @@ namespace LogBook
             form.Show();
             this.Hide();
         }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ConvertEmployeeCsv();
+            ConvertLogCsv();
+        }
+
+       
     }
 }

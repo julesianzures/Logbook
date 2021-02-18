@@ -82,6 +82,7 @@ namespace LogBook
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(151, 28);
             this.searchTextBox.TabIndex = 38;
+            this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // employeeListView
             // 
@@ -185,6 +186,7 @@ namespace LogBook
             // 
             // LogHistoryForm
             // 
+            this.AcceptButton = this.searchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
