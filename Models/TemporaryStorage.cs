@@ -7,7 +7,7 @@ namespace LogBook.Models
     {
         public static int EmployeeId { get; set; }
        
-        public static string DateStored { get; set; }
+        public static string StoredDate { get; set; }
        
     }
 }

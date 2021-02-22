@@ -52,7 +52,7 @@ namespace LogBook
                         {
                             userFound = true;
                             TemporaryStorage.EmployeeId = Convert.ToInt32(EmployeeSubstring[0]);
-                            CheckDateStored();
+                            CheckStoredDate();
                             new HomeForm().Show();
                             this.Hide();
                             break;
@@ -71,7 +71,7 @@ namespace LogBook
             }
         }
 
-        private void CheckDateStored()
+        private void CheckStoredDate()
         {
             string logPath = $"{Environment.CurrentDirectory}\\log.csv";
             if (!File.Exists(logPath))
@@ -86,7 +86,7 @@ namespace LogBook
                     string[] LogSubstring = logCsvLine.Split(',');
                     if (LogSubstring[0] == TemporaryStorage.EmployeeId.ToString())
                     {
-                        TemporaryStorage.DateStored = Convert.ToString(LogSubstring[1]);
+                        TemporaryStorage.StoredDate = Convert.ToString(LogSubstring[1]);
                     }
                     logCsvLine = streamReaderForLog.ReadLine();
                 }

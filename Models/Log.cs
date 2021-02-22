@@ -7,7 +7,6 @@ namespace LogBook.Models
     public class Log
     {
         public string EmployeeId { get; set; }
-       //public string Name { get; set; }
         public string Date { get; set; }
         public string Time { get; set; }
         public string Temperature { get; set; }

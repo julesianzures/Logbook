@@ -20,16 +20,19 @@ namespace LogBook
 
         private void addButton_Click(object sender, EventArgs e) 
         {
-            string dateStored = TemporaryStorage.DateStored;
-            Console.WriteLine("storedDate," + dateStored);
+            string storedDate = TemporaryStorage.StoredDate;
+            Console.WriteLine("storedDate," + storedDate);
             if (tempTextBox.Text == "")
             {
                 MessageBox.Show("Please input your temperature.");
+                lastPlaceTextBox.Clear();
             }
-            else if (dateStored == displayDateLabel.Text)
+            else if (storedDate == displayDateLabel.Text)
             {
                 addButton.Enabled = false;
                 MessageBox.Show("You can only add info once per day.");
+                tempTextBox.Clear();
+                lastPlaceTextBox.Clear();
             }
             else
             {
@@ -45,7 +48,6 @@ namespace LogBook
             string time = displayTimeLabel.Text;
             string temp = tempTextBox.Text;
             string lastPlaceVisited = lastPlaceTextBox.Text;
-            HomeForm homeForm = new HomeForm();
 
             StringBuilder csv = new StringBuilder();
 
@@ -61,7 +63,7 @@ namespace LogBook
             csv.AppendLine(temp);
             csv.AppendLine(lastPlaceVisited);
 
-            TemporaryStorage.DateStored = date;
+            TemporaryStorage.StoredDate = date;
 
             using (StreamReader streamReader = new StreamReader(logPath))
             {
