@@ -66,6 +66,14 @@ namespace LogBook
         {
             Application.Exit();
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Form loginForm = new LoginForm();
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }
     

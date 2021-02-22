@@ -36,6 +36,7 @@
             this.logHistoryButton = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.homeLabel = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.buttonsPanel.SuspendLayout();
             this.namePanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
@@ -45,6 +46,7 @@
             // 
             this.buttonsPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.buttonsPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.buttonsPanel.Controls.Add(this.logoutButton);
             this.buttonsPanel.Controls.Add(this.namePanel);
             this.buttonsPanel.Controls.Add(this.logButton);
             this.buttonsPanel.Controls.Add(this.exitButton);
@@ -145,6 +147,22 @@
             this.homeLabel.Text = "LOGBOOK HOME";
             this.homeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.logoutButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.logoutButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutButton.ForeColor = System.Drawing.Color.Black;
+            this.logoutButton.Location = new System.Drawing.Point(0, 122);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(165, 40);
+            this.logoutButton.TabIndex = 4;
+            this.logoutButton.TabStop = false;
+            this.logoutButton.Text = "Log out";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,7 +173,7 @@
             this.Controls.Add(this.buttonsPanel);
             this.Name = "HomeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HOME FORM";
+            this.Text = "LOGBOOK";
             this.buttonsPanel.ResumeLayout(false);
             this.namePanel.ResumeLayout(false);
             this.namePanel.PerformLayout();
@@ -175,5 +193,6 @@
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label homeLabel;
         public System.Windows.Forms.Button logButton;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
