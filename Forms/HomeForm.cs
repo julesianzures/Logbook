@@ -7,43 +7,18 @@ namespace LogBook
 {
     public partial class HomeForm : Form
     {
+
         public HomeForm()
         {
             InitializeComponent();
             WelcomeEmployee();
         }
 
-        private void logButton_Click(object sender, EventArgs e)
-        {
-            Form form = new LogbookForm();
-            form.Show();
-        }
-
-        private void viewLogHistory_Click(object sender, EventArgs e)
-        {
-            Form form = new LogHistoryForm();
-            form.Show();
-        }
-
-        private void logButton_Click_1(object sender, EventArgs e)
-        {
-            Form form = new LogbookForm();
-            form.Show();
-            this.Hide();
-        }
-
-        private void logHistoryButton_Click(object sender, EventArgs e)
-        {
-            Form form = new LogHistoryForm();
-            form.Show();
-            this.Hide();
-        }
-
         private void WelcomeEmployee()
         {
-            string temporaryId = TemporaryStorage.employeeId.ToString();
-            string path = $"{Environment.CurrentDirectory}\\employees.csv";
-            using (StreamReader streamReader = new StreamReader(path))
+            string temporaryId = TemporaryStorage.EmployeeId.ToString();
+            string employeePath = $"{Environment.CurrentDirectory}\\employees.csv";
+            using (StreamReader streamReader = new StreamReader(employeePath))
             {
                 string csvLine = streamReader.ReadLine();
                 bool userFound = false;
@@ -60,5 +35,37 @@ namespace LogBook
                 }
             }
         }
+
+        private void logButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            LogbookForm logbookForm = new LogbookForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            logbookForm.BringToFront();
+            this.mainPanel.Controls.Add(logbookForm);
+            if (logbookForm.addButton.Enabled == false)
+            {
+                logButton.Enabled = false;
+            }
+            else
+            {
+                logbookForm.Show();
+            }
+
+        }
+
+        private void logHistoryButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            LogHistoryForm logHistoryForm = new LogHistoryForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            logHistoryForm.BringToFront();
+            this.mainPanel.Controls.Add(logHistoryForm);
+            logHistoryForm.Show();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
+    

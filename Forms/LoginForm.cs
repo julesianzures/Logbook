@@ -23,43 +23,42 @@ namespace LogBook
         public void Login()
         {
             
-            string employeeID = employeeIdTextBox.Text;
+            string employeeId = employeeIdTextBox.Text;
 
-            if (employeeID == String.Empty)
+            if (employeeId == String.Empty)
             {
                 MessageBox.Show("Input field is empty. Try again.");
             }
             
             else 
             {
-                string path = $"{Environment.CurrentDirectory}\\employees.csv";
+                string employeePath = $"{Environment.CurrentDirectory}\\employees.csv";
                 
-                if (!File.Exists(path))
+                if (!File.Exists(employeePath))
                 {
                     MessageBox.Show("No users found.");
-                    File.Create(path).Close();
+                    File.Create(employeePath).Close();
                 }
 
-                using (StreamReader streamReader = new StreamReader(path))
+                using (StreamReader streamReaderForEmployee = new StreamReader(employeePath))
                 {
-                    string csvLine = streamReader.ReadLine();
+                    string employeeCsvLine = streamReaderForEmployee.ReadLine();
                     bool userFound = false;
-                    while (csvLine != null)
+                    while (employeeCsvLine != null)
                     {
 
-                        string[] substring = csvLine.Split(',');
-                        if (substring[0] == employeeID)
+                        string[] EmployeeSubstring = employeeCsvLine.Split(',');
+                        if (EmployeeSubstring[0] == employeeId)
                         {
-                            MessageBox.Show("Login success!");
                             userFound = true;
-                            TemporaryStorage.employeeId = Convert.ToInt32(substring[0]);
+                            TemporaryStorage.EmployeeId = Convert.ToInt32(EmployeeSubstring[0]);
+                            CheckDateStored();
                             new HomeForm().Show();
                             this.Hide();
                             break;
                         }
 
-                        csvLine = streamReader.ReadLine();
-
+                        employeeCsvLine = streamReaderForEmployee.ReadLine();
                     }
 
                     if (!userFound)   
@@ -68,9 +67,32 @@ namespace LogBook
                         employeeIdTextBox.Clear();
                     }
                 }
-                
+
             }
         }
+
+        private void CheckDateStored()
+        {
+            string logPath = $"{Environment.CurrentDirectory}\\log.csv";
+            if (!File.Exists(logPath))
+            {
+                File.Create(logPath).Close();
+            }
+            using (StreamReader streamReaderForLog = new StreamReader(logPath))
+            {
+                string logCsvLine = streamReaderForLog.ReadLine();
+                while (logCsvLine != null)
+                {
+                    string[] LogSubstring = logCsvLine.Split(',');
+                    if (LogSubstring[0] == TemporaryStorage.EmployeeId.ToString())
+                    {
+                        TemporaryStorage.DateStored = Convert.ToString(LogSubstring[1]);
+                    }
+                    logCsvLine = streamReaderForLog.ReadLine();
+                }
+            }
+        }
+
         private void registerHereButton_Click(object sender, EventArgs e)
         {
             Form form = new RegisterForm();
@@ -80,8 +102,8 @@ namespace LogBook
 
         private void employeeIdTextBox_Enter(object sender, EventArgs e)
         {      
-                employeeIdTextBox.Text = null;
-                employeeIdTextBox.ForeColor = Color.Black;              
+             employeeIdTextBox.Text = null;
+             employeeIdTextBox.ForeColor = Color.Black;              
         }
 
     }

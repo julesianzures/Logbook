@@ -11,85 +11,37 @@ namespace LogBook
         public LogHistoryForm()
         {
             InitializeComponent();
-            ConvertEmployeeCsv();
             ConvertLogCsv();
-        }
-
-        private void ConvertEmployeeCsv()
-        {
-            employeeListView.Items.Clear();
-
-            string[] csvLine = File.ReadAllLines($"{Environment.CurrentDirectory}\\employees.csv");
-
-            for (int i = 0; i < csvLine.Length; i++)
-            {
-                Employee employee = new Employee(csvLine[i]);
-                employeeListView.Items.Add(employee.ToListViewItem());
-            }
+            DisplayInfoFromCurrentUser();
         }
 
         private void ConvertLogCsv()
         {
             logListView.Items.Clear();
 
-            string[] csvline = File.ReadAllLines($"{Environment.CurrentDirectory}\\log.csv");
+            string[] csvLine = File.ReadAllLines($"{Environment.CurrentDirectory}\\log.csv");
 
             var log = new List<Log>();
 
-            for (int i = 0; i < csvline.Length; i++)
+            for (int i = 0; i < csvLine.Length; i++)
             {
-                Log loghistory = new Log(csvline[i]);
+                Log loghistory = new Log(csvLine[i]);
                 log.Add(loghistory);
-                logListView.Items.Add(loghistory.TolistViewItem());
+                logListView.Items.Add(loghistory.TolistViewItem()); 
             }
+            
         }
 
-        public void SearchInListView()
+        private void DisplayInfoFromCurrentUser()
         {
-            foreach (ListViewItem employee in employeeListView.Items)
+            string temporaryId = TemporaryStorage.EmployeeId.ToString();
+            foreach (ListViewItem log in logListView.Items)
             {
-                if (!employee.ToString().ToLower().Contains(searchTextBox.Text.ToLower()))
+                if (!log.ToString().Contains(temporaryId.ToString()))
                 {
-                    Console.WriteLine(employee.ToString());
-                    employeeListView.Items.Remove(employee);
+                    logListView.Items.Remove(log);
                 }
             }
-
-            foreach (ListViewItem logList in logListView.Items)
-            {
-                if (!logList.ToString().ToLower().Contains(searchTextBox.Text.ToLower()))
-                {
-                    logListView.Items.Remove(logList);
-                }
-            }
-
         }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            SearchInListView();
-        }
-
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            Form form = new HomeForm();
-            form.Show();
-            this.Hide();
-        }
-
-        private void logbookFormButton_Click(object sender, EventArgs e)
-        {
-            Form form = new LogbookForm();
-            form.Show();
-            this.Hide();
-        }
-
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            ConvertEmployeeCsv();
-            ConvertLogCsv();
-        }
-
-       
     }
 }

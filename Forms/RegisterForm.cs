@@ -53,8 +53,8 @@ namespace LogBook
             File.AppendAllText(path, $"{employeeId},{name}{Environment.NewLine}");
             nameTextBox.Clear();
 
-            TemporaryStorage.employeeId = employeeId;
-            MessageBox.Show($"You are now registered. ID: {TemporaryStorage.employeeId}");
+            TemporaryStorage.EmployeeId = employeeId;
+            MessageBox.Show($"You are now registered. Id: {TemporaryStorage.EmployeeId}");
         }
 
         private void loginInInsteadButton_Click(object sender, EventArgs e)

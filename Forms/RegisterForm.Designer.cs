@@ -11,7 +11,7 @@ namespace LogBook
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -42,7 +42,7 @@ namespace LogBook
             this.logbookLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.logbookLabel.AutoSize = true;
             this.logbookLabel.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logbookLabel.Location = new System.Drawing.Point(216, 83);
+            this.logbookLabel.Location = new System.Drawing.Point(250, 83);
             this.logbookLabel.Name = "logbookLabel";
             this.logbookLabel.Size = new System.Drawing.Size(191, 43);
             this.logbookLabel.TabIndex = 1;
@@ -54,7 +54,7 @@ namespace LogBook
             this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(168, 198);
+            this.nameLabel.Location = new System.Drawing.Point(202, 198);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(59, 21);
             this.nameLabel.TabIndex = 2;
@@ -64,7 +64,7 @@ namespace LogBook
             // 
             this.namePanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.namePanel.BackColor = System.Drawing.Color.DimGray;
-            this.namePanel.Location = new System.Drawing.Point(172, 222);
+            this.namePanel.Location = new System.Drawing.Point(206, 222);
             this.namePanel.Name = "namePanel";
             this.namePanel.Size = new System.Drawing.Size(280, 1);
             this.namePanel.TabIndex = 3;
@@ -74,7 +74,7 @@ namespace LogBook
             this.nameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTextBox.Location = new System.Drawing.Point(224, 194);
+            this.nameTextBox.Location = new System.Drawing.Point(253, 194);
             this.nameTextBox.Multiline = true;
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(228, 28);
@@ -88,7 +88,7 @@ namespace LogBook
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerButton.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerButton.ForeColor = System.Drawing.Color.White;
-            this.registerButton.Location = new System.Drawing.Point(172, 256);
+            this.registerButton.Location = new System.Drawing.Point(206, 256);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(280, 40);
             this.registerButton.TabIndex = 7;
@@ -104,7 +104,7 @@ namespace LogBook
             this.loginInInsteadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginInInsteadButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginInInsteadButton.ForeColor = System.Drawing.Color.DimGray;
-            this.loginInInsteadButton.Location = new System.Drawing.Point(254, 302);
+            this.loginInInsteadButton.Location = new System.Drawing.Point(288, 302);
             this.loginInInsteadButton.Name = "loginInInsteadButton";
             this.loginInInsteadButton.Size = new System.Drawing.Size(114, 29);
             this.loginInInsteadButton.TabIndex = 10;
@@ -120,7 +120,7 @@ namespace LogBook
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(627, 438);
+            this.ClientSize = new System.Drawing.Size(684, 438);
             this.Controls.Add(this.loginInInsteadButton);
             this.Controls.Add(this.registerButton);
             this.Controls.Add(this.nameTextBox);

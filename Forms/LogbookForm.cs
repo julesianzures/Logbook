@@ -9,32 +9,27 @@ namespace LogBook
 {
     public partial class LogbookForm : Form
     {
+
         public LogbookForm()
         {
             InitializeComponent();
-            datePicker.Value = DateTime.Now;
-            datePicker.Enabled = false;
-            timePicker.Enabled = false;
-        }
-
-        private void datePicker_ValueChanged(object sender, EventArgs e)
-        {
-            datePicker.Format = DateTimePickerFormat.Custom;
-            datePicker.CustomFormat = "yyyy-MM-dd";
-        }
-
-        private void timePicker_ValueChanged_1(object sender, EventArgs e)
-        {
-            timePicker.Format = DateTimePickerFormat.Custom;
-            timePicker.CustomFormat = "HH:mm:ss";
+            var dateAndTime = DateTime.Now;
+            displayDateLabel.Text = ($"{dateAndTime.ToString("yyyy-MM-dd")}");
+            displayTimeLabel.Text = ($"{dateAndTime.ToString("HH: mm")}");    
         }
 
         private void addButton_Click(object sender, EventArgs e) 
         {
-            if (tempTextBox.Text == ""
-                || lastPlaceTextBox.Text == "")
+            string dateStored = TemporaryStorage.DateStored;
+            Console.WriteLine("storedDate," + dateStored);
+            if (tempTextBox.Text == "")
             {
-                MessageBox.Show("Empty input fields. Try again.");
+                MessageBox.Show("Please input your temperature.");
+            }
+            else if (dateStored == displayDateLabel.Text)
+            {
+                addButton.Enabled = false;
+                MessageBox.Show("You can only add info once per day.");
             }
             else
             {
@@ -45,19 +40,19 @@ namespace LogBook
 
         public void AddInfo()           
         {
-            string employeeId = TemporaryStorage.employeeId.ToString();
-            string date = datePicker.Text;
-            string time = timePicker.Text;
+            string employeeId = TemporaryStorage.EmployeeId.ToString();
+            string date = displayDateLabel.Text;
+            string time = displayTimeLabel.Text;
             string temp = tempTextBox.Text;
             string lastPlaceVisited = lastPlaceTextBox.Text;
-            
+            HomeForm homeForm = new HomeForm();
 
             StringBuilder csv = new StringBuilder();
 
-            string path = $"{Environment.CurrentDirectory}\\log.csv"; 
-            if (!File.Exists(path))
+            string logPath = $"{Environment.CurrentDirectory}\\log.csv"; 
+            if (!File.Exists(logPath))
             {
-                File.Create(path).Close();  
+                File.Create(logPath).Close();  
             }
 
             csv.AppendLine(employeeId);
@@ -66,8 +61,9 @@ namespace LogBook
             csv.AppendLine(temp);
             csv.AppendLine(lastPlaceVisited);
 
+            TemporaryStorage.DateStored = date;
 
-            using (StreamReader streamReader = new StreamReader(path))
+            using (StreamReader streamReader = new StreamReader(logPath))
             {
                 string csvLine = streamReader.ReadLine();
                 while (csvLine != null)
@@ -77,29 +73,16 @@ namespace LogBook
                 }
             }
 
-            File.AppendAllText(path, $"{employeeId},{date},{time},{temp},{lastPlaceVisited}{Environment.NewLine}");
+            File.AppendAllText(logPath, $"{employeeId},{date},{time},{temp},{lastPlaceVisited}{Environment.NewLine}");
+            tempTextBox.Clear();
+            lastPlaceTextBox.Clear();
         }
 
         private void clearValuesButton_Click(object sender, EventArgs e)
         {
-            datePicker.Checked = false;
-            timePicker.Checked = false;
             tempTextBox.Clear();
             lastPlaceTextBox.Clear();
         }
         
-        private void viewLogHistory_Click(object sender, EventArgs e)
-        {
-            Form form = new LogHistoryForm();
-            form.Show();
-            this.Hide();
-        }
-
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            Form form = new HomeForm();
-            form.Show();
-            this.Hide();
-        }
     }
 }

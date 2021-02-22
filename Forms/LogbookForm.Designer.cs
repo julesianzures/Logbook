@@ -11,7 +11,7 @@ namespace LogBook
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param Name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -35,14 +35,12 @@ namespace LogBook
             this.timeLabel = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.clearValuesButton = new System.Windows.Forms.Button();
-            this.viewLogHistory = new System.Windows.Forms.Button();
-            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.lastPlaceTextBox = new System.Windows.Forms.TextBox();
-            this.timePicker = new System.Windows.Forms.DateTimePicker();
             this.dateLabel = new System.Windows.Forms.Label();
             this.tempTextBox = new System.Windows.Forms.TextBox();
             this.logHistorygroupBox = new System.Windows.Forms.GroupBox();
-            this.backButton = new System.Windows.Forms.Button();
+            this.displayTimeLabel = new System.Windows.Forms.Label();
+            this.displayDateLabel = new System.Windows.Forms.Label();
             this.logHistorygroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,11 +49,11 @@ namespace LogBook
             this.informationLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.informationLabel.AutoSize = true;
             this.informationLabel.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.informationLabel.Location = new System.Drawing.Point(183, 20);
+            this.informationLabel.Location = new System.Drawing.Point(118, 41);
             this.informationLabel.Name = "informationLabel";
-            this.informationLabel.Size = new System.Drawing.Size(263, 43);
+            this.informationLabel.Size = new System.Drawing.Size(343, 43);
             this.informationLabel.TabIndex = 2;
-            this.informationLabel.Text = "INFORMATION";
+            this.informationLabel.Text = "LOG INFORMATION";
             this.informationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lastPlaceVisitedLabel
@@ -63,7 +61,7 @@ namespace LogBook
             this.lastPlaceVisitedLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lastPlaceVisitedLabel.AutoSize = true;
             this.lastPlaceVisitedLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastPlaceVisitedLabel.Location = new System.Drawing.Point(320, 131);
+            this.lastPlaceVisitedLabel.Location = new System.Drawing.Point(292, 131);
             this.lastPlaceVisitedLabel.Name = "lastPlaceVisitedLabel";
             this.lastPlaceVisitedLabel.Size = new System.Drawing.Size(153, 21);
             this.lastPlaceVisitedLabel.TabIndex = 13;
@@ -74,7 +72,7 @@ namespace LogBook
             this.tempLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.tempLabel.AutoSize = true;
             this.tempLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tempLabel.Location = new System.Drawing.Point(320, 63);
+            this.tempLabel.Location = new System.Drawing.Point(292, 63);
             this.tempLabel.Name = "tempLabel";
             this.tempLabel.Size = new System.Drawing.Size(118, 21);
             this.tempLabel.TabIndex = 12;
@@ -85,7 +83,7 @@ namespace LogBook
             this.timeLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.timeLabel.AutoSize = true;
             this.timeLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLabel.Location = new System.Drawing.Point(35, 131);
+            this.timeLabel.Location = new System.Drawing.Point(39, 131);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(48, 21);
             this.timeLabel.TabIndex = 11;
@@ -94,13 +92,13 @@ namespace LogBook
             // addButton
             // 
             this.addButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.addButton.BackColor = System.Drawing.Color.Black;
-            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addButton.BackColor = System.Drawing.Color.White;
+            this.addButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.addButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addButton.ForeColor = System.Drawing.Color.White;
-            this.addButton.Location = new System.Drawing.Point(159, 200);
+            this.addButton.ForeColor = System.Drawing.Color.Black;
+            this.addButton.Location = new System.Drawing.Point(409, 204);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(100, 40);
+            this.addButton.Size = new System.Drawing.Size(87, 40);
             this.addButton.TabIndex = 6;
             this.addButton.Text = "Add Info";
             this.addButton.UseVisualStyleBackColor = false;
@@ -109,11 +107,11 @@ namespace LogBook
             // clearValuesButton
             // 
             this.clearValuesButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.clearValuesButton.BackColor = System.Drawing.Color.Black;
-            this.clearValuesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearValuesButton.BackColor = System.Drawing.Color.White;
+            this.clearValuesButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.clearValuesButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearValuesButton.ForeColor = System.Drawing.Color.White;
-            this.clearValuesButton.Location = new System.Drawing.Point(39, 199);
+            this.clearValuesButton.ForeColor = System.Drawing.Color.Black;
+            this.clearValuesButton.Location = new System.Drawing.Point(296, 204);
             this.clearValuesButton.Name = "clearValuesButton";
             this.clearValuesButton.Size = new System.Drawing.Size(108, 40);
             this.clearValuesButton.TabIndex = 5;
@@ -121,67 +119,23 @@ namespace LogBook
             this.clearValuesButton.UseVisualStyleBackColor = false;
             this.clearValuesButton.Click += new System.EventHandler(this.clearValuesButton_Click);
             // 
-            // viewLogHistory
-            // 
-            this.viewLogHistory.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.viewLogHistory.BackColor = System.Drawing.Color.Black;
-            this.viewLogHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewLogHistory.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.viewLogHistory.ForeColor = System.Drawing.Color.White;
-            this.viewLogHistory.Location = new System.Drawing.Point(466, 94);
-            this.viewLogHistory.Name = "viewLogHistory";
-            this.viewLogHistory.Size = new System.Drawing.Size(130, 40);
-            this.viewLogHistory.TabIndex = 5;
-            this.viewLogHistory.Text = "View Log History";
-            this.viewLogHistory.UseVisualStyleBackColor = false;
-            this.viewLogHistory.Click += new System.EventHandler(this.viewLogHistory_Click);
-            // 
-            // datePicker
-            // 
-            this.datePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.datePicker.Checked = false;
-            this.datePicker.CustomFormat = "yyyy-MM-dd";
-            this.datePicker.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePicker.Location = new System.Drawing.Point(39, 87);
-            this.datePicker.Name = "datePicker";
-            this.datePicker.Size = new System.Drawing.Size(200, 22);
-            this.datePicker.TabIndex = 1;
-            this.datePicker.Tag = "0";
-            this.datePicker.Value = new System.DateTime(2021, 2, 10, 0, 0, 0, 0);
-            this.datePicker.ValueChanged += new System.EventHandler(this.datePicker_ValueChanged);
-            // 
             // lastPlaceTextBox
             // 
             this.lastPlaceTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lastPlaceTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastPlaceTextBox.Location = new System.Drawing.Point(324, 154);
+            this.lastPlaceTextBox.Location = new System.Drawing.Point(296, 154);
             this.lastPlaceTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.lastPlaceTextBox.Multiline = true;
             this.lastPlaceTextBox.Name = "lastPlaceTextBox";
             this.lastPlaceTextBox.Size = new System.Drawing.Size(200, 28);
             this.lastPlaceTextBox.TabIndex = 4;
             // 
-            // timePicker
-            // 
-            this.timePicker.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.timePicker.Checked = false;
-            this.timePicker.CustomFormat = "HH:mm:ss";
-            this.timePicker.Font = new System.Drawing.Font("Franklin Gothic Book", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.timePicker.Location = new System.Drawing.Point(39, 155);
-            this.timePicker.Name = "timePicker";
-            this.timePicker.Size = new System.Drawing.Size(125, 22);
-            this.timePicker.TabIndex = 2;
-            this.timePicker.Value = new System.DateTime(2021, 2, 10, 13, 24, 56, 0);
-            this.timePicker.ValueChanged += new System.EventHandler(this.timePicker_ValueChanged_1);
-            // 
             // dateLabel
             // 
             this.dateLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dateLabel.AutoSize = true;
             this.dateLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLabel.Location = new System.Drawing.Point(35, 63);
+            this.dateLabel.Location = new System.Drawing.Point(39, 63);
             this.dateLabel.Name = "dateLabel";
             this.dateLabel.Size = new System.Drawing.Size(50, 21);
             this.dateLabel.TabIndex = 36;
@@ -191,7 +145,7 @@ namespace LogBook
             // 
             this.tempTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.tempTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tempTextBox.Location = new System.Drawing.Point(324, 85);
+            this.tempTextBox.Location = new System.Drawing.Point(296, 85);
             this.tempTextBox.Margin = new System.Windows.Forms.Padding(0);
             this.tempTextBox.Multiline = true;
             this.tempTextBox.Name = "tempTextBox";
@@ -201,51 +155,58 @@ namespace LogBook
             // logHistorygroupBox
             // 
             this.logHistorygroupBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.logHistorygroupBox.Controls.Add(this.displayTimeLabel);
+            this.logHistorygroupBox.Controls.Add(this.displayDateLabel);
             this.logHistorygroupBox.Controls.Add(this.dateLabel);
-            this.logHistorygroupBox.Controls.Add(this.datePicker);
             this.logHistorygroupBox.Controls.Add(this.tempTextBox);
             this.logHistorygroupBox.Controls.Add(this.lastPlaceTextBox);
             this.logHistorygroupBox.Controls.Add(this.clearValuesButton);
             this.logHistorygroupBox.Controls.Add(this.timeLabel);
             this.logHistorygroupBox.Controls.Add(this.addButton);
-            this.logHistorygroupBox.Controls.Add(this.timePicker);
             this.logHistorygroupBox.Controls.Add(this.tempLabel);
             this.logHistorygroupBox.Controls.Add(this.lastPlaceVisitedLabel);
             this.logHistorygroupBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logHistorygroupBox.Location = new System.Drawing.Point(32, 130);
+            this.logHistorygroupBox.Location = new System.Drawing.Point(40, 99);
             this.logHistorygroupBox.Name = "logHistorygroupBox";
-            this.logHistorygroupBox.Size = new System.Drawing.Size(564, 250);
+            this.logHistorygroupBox.Size = new System.Drawing.Size(509, 250);
             this.logHistorygroupBox.TabIndex = 38;
             this.logHistorygroupBox.TabStop = false;
             // 
-            // backButton
+            // displayTimeLabel
             // 
-            this.backButton.BackColor = System.Drawing.Color.Black;
-            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.ForeColor = System.Drawing.Color.White;
-            this.backButton.Location = new System.Drawing.Point(521, 386);
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 40);
-            this.backButton.TabIndex = 39;
-            this.backButton.Text = "Back";
-            this.backButton.UseVisualStyleBackColor = false;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.displayTimeLabel.AutoSize = true;
+            this.displayTimeLabel.BackColor = System.Drawing.Color.LightGray;
+            this.displayTimeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.displayTimeLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayTimeLabel.Location = new System.Drawing.Point(39, 157);
+            this.displayTimeLabel.Name = "displayTimeLabel";
+            this.displayTimeLabel.Size = new System.Drawing.Size(0, 24);
+            this.displayTimeLabel.TabIndex = 41;
+            // 
+            // displayDateLabel
+            // 
+            this.displayDateLabel.AutoSize = true;
+            this.displayDateLabel.BackColor = System.Drawing.Color.LightGray;
+            this.displayDateLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayDateLabel.Location = new System.Drawing.Point(39, 88);
+            this.displayDateLabel.Name = "displayDateLabel";
+            this.displayDateLabel.Size = new System.Drawing.Size(0, 24);
+            this.displayDateLabel.TabIndex = 40;
             // 
             // LogbookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(627, 438);
-            this.Controls.Add(this.backButton);
+            this.ClientSize = new System.Drawing.Size(588, 416);
             this.Controls.Add(this.logHistorygroupBox);
-            this.Controls.Add(this.viewLogHistory);
             this.Controls.Add(this.informationLabel);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogbookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOG BOOK FORM";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.logHistorygroupBox.ResumeLayout(false);
             this.logHistorygroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -259,15 +220,13 @@ namespace LogBook
         private System.Windows.Forms.Label lastPlaceVisitedLabel;
         private System.Windows.Forms.Label tempLabel;
         private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Button addButton;
+        public System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button clearValuesButton;
-        private System.Windows.Forms.Button viewLogHistory;
-        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.TextBox lastPlaceTextBox;
-        private System.Windows.Forms.DateTimePicker timePicker;
-        private System.Windows.Forms.Label dateLabel;
+        public System.Windows.Forms.Label dateLabel;
         private System.Windows.Forms.TextBox tempTextBox;
         private System.Windows.Forms.GroupBox logHistorygroupBox;
-        private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label displayTimeLabel;
+        private System.Windows.Forms.Label displayDateLabel;
     }
 }

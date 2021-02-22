@@ -5,26 +5,26 @@ namespace LogBook.Models
 {
     public class Employee
     {
-        public int id { get; set; }
-        public string name { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
 
         public Employee(string rowData)
         {
             string[] data = rowData.Split(',');
 
-            this.id = Convert.ToInt32(data[0]);
-            this.name = data[1];
+            this.Id = Convert.ToInt32(data[0]);
+            this.Name = data[1];
         }
 
         public override string ToString()
         {
-            string data = $"{id} {name}";
+            string data = $"{Id} {Name}";
             return data;
         }
 
         public ListViewItem ToListViewItem()
         {
-            string[] row = { Convert.ToString(id), name };
+            string[] row = { Convert.ToString(Id), Name };
             ListViewItem listViewItem = new ListViewItem(row);
 
             return listViewItem;
