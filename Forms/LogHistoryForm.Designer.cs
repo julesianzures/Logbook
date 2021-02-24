@@ -40,10 +40,10 @@ namespace LogBook
             // 
             // logHistoryLabel
             // 
-            this.logHistoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.logHistoryLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.logHistoryLabel.AutoSize = true;
             this.logHistoryLabel.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logHistoryLabel.Location = new System.Drawing.Point(173, 67);
+            this.logHistoryLabel.Location = new System.Drawing.Point(176, 54);
             this.logHistoryLabel.Name = "logHistoryLabel";
             this.logHistoryLabel.Size = new System.Drawing.Size(249, 43);
             this.logHistoryLabel.TabIndex = 3;
@@ -52,7 +52,9 @@ namespace LogBook
             // 
             // logListView
             // 
-            this.logListView.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.logListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.logListView.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.logListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.employeeId,
@@ -63,9 +65,9 @@ namespace LogBook
             this.logListView.GridLines = true;
             this.logListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.logListView.HideSelection = false;
-            this.logListView.Location = new System.Drawing.Point(108, 133);
+            this.logListView.Location = new System.Drawing.Point(28, 100);
             this.logListView.Name = "logListView";
-            this.logListView.Size = new System.Drawing.Size(372, 233);
+            this.logListView.Size = new System.Drawing.Size(547, 307);
             this.logListView.TabIndex = 2;
             this.logListView.TabStop = false;
             this.logListView.UseCompatibleStateImageBehavior = false;
@@ -101,7 +103,7 @@ namespace LogBook
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(588, 445);
+            this.ClientSize = new System.Drawing.Size(603, 476);
             this.Controls.Add(this.logListView);
             this.Controls.Add(this.logHistoryLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

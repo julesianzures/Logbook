@@ -41,6 +41,7 @@ namespace LogBook
                 {
                     logListView.Items.Remove(log);
                 }
+                logListView.Refresh();
             }
         }
     }

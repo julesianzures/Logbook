@@ -45,7 +45,7 @@ namespace LogBook
             this.logbookLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.logbookLabel.AutoSize = true;
             this.logbookLabel.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logbookLabel.Location = new System.Drawing.Point(251, 83);
+            this.logbookLabel.Location = new System.Drawing.Point(202, 82);
             this.logbookLabel.Name = "logbookLabel";
             this.logbookLabel.Size = new System.Drawing.Size(190, 43);
             this.logbookLabel.TabIndex = 0;
@@ -56,7 +56,7 @@ namespace LogBook
             // 
             this.idIcon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.idIcon.Image = ((System.Drawing.Image)(resources.GetObject("idIcon.Image")));
-            this.idIcon.Location = new System.Drawing.Point(207, 186);
+            this.idIcon.Location = new System.Drawing.Point(158, 185);
             this.idIcon.Name = "idIcon";
             this.idIcon.Size = new System.Drawing.Size(30, 30);
             this.idIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -68,7 +68,7 @@ namespace LogBook
             this.idPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.idPanel.BackColor = System.Drawing.Color.DimGray;
             this.idPanel.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idPanel.Location = new System.Drawing.Point(207, 222);
+            this.idPanel.Location = new System.Drawing.Point(158, 221);
             this.idPanel.Name = "idPanel";
             this.idPanel.Size = new System.Drawing.Size(280, 1);
             this.idPanel.TabIndex = 2;
@@ -81,7 +81,7 @@ namespace LogBook
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Franklin Gothic Book", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginButton.ForeColor = System.Drawing.Color.White;
-            this.loginButton.Location = new System.Drawing.Point(207, 256);
+            this.loginButton.Location = new System.Drawing.Point(158, 255);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(280, 40);
             this.loginButton.TabIndex = 3;
@@ -94,7 +94,7 @@ namespace LogBook
             this.dontHaveAnAccountText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dontHaveAnAccountText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dontHaveAnAccountText.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dontHaveAnAccountText.Location = new System.Drawing.Point(224, 308);
+            this.dontHaveAnAccountText.Location = new System.Drawing.Point(175, 307);
             this.dontHaveAnAccountText.Name = "dontHaveAnAccountText";
             this.dontHaveAnAccountText.Size = new System.Drawing.Size(150, 19);
             this.dontHaveAnAccountText.TabIndex = 6;
@@ -108,7 +108,7 @@ namespace LogBook
             this.registerHereButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerHereButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerHereButton.ForeColor = System.Drawing.Color.DimGray;
-            this.registerHereButton.Location = new System.Drawing.Point(366, 304);
+            this.registerHereButton.Location = new System.Drawing.Point(317, 303);
             this.registerHereButton.Name = "registerHereButton";
             this.registerHereButton.Size = new System.Drawing.Size(111, 29);
             this.registerHereButton.TabIndex = 7;
@@ -124,7 +124,7 @@ namespace LogBook
             this.employeeIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.employeeIdTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeIdTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.employeeIdTextBox.Location = new System.Drawing.Point(243, 192);
+            this.employeeIdTextBox.Location = new System.Drawing.Point(194, 191);
             this.employeeIdTextBox.Multiline = true;
             this.employeeIdTextBox.Name = "employeeIdTextBox";
             this.employeeIdTextBox.Size = new System.Drawing.Size(244, 28);
@@ -138,7 +138,7 @@ namespace LogBook
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(684, 438);
+            this.ClientSize = new System.Drawing.Size(587, 437);
             this.Controls.Add(this.employeeIdTextBox);
             this.Controls.Add(this.registerHereButton);
             this.Controls.Add(this.dontHaveAnAccountText);

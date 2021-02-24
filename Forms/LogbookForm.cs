@@ -15,10 +15,11 @@ namespace LogBook
             InitializeComponent();
             var dateAndTime = DateTime.Now;
             displayDateLabel.Text = ($"{dateAndTime.ToString("yyyy-MM-dd")}");
-            displayTimeLabel.Text = ($"{dateAndTime.ToString("HH: mm")}");    
+            displayTimeLabel.Text = ($"{dateAndTime.ToString("HH: mm")}");
+            
         }
 
-        private void addButton_Click(object sender, EventArgs e) 
+        private void addButton_Click(object sender, EventArgs e)
         {
             string storedDate = TemporaryStorage.StoredDate;
             Console.WriteLine("storedDate," + storedDate);
@@ -80,11 +81,11 @@ namespace LogBook
             lastPlaceTextBox.Clear();
         }
 
-        private void clearValuesButton_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
-            tempTextBox.Clear();
-            lastPlaceTextBox.Clear();
+            Form homeForm = new HomeForm();
+            homeForm.Show();
+            this.Hide();
         }
-        
     }
 }

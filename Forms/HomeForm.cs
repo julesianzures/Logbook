@@ -38,19 +38,8 @@ namespace LogBook
 
         private void logButton_Click(object sender, EventArgs e)
         {
-            mainPanel.Controls.Clear();
-            LogbookForm logbookForm = new LogbookForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            logbookForm.BringToFront();
-            this.mainPanel.Controls.Add(logbookForm);
-            if (logbookForm.addButton.Enabled == false)
-            {
-                logButton.Enabled = false;
-            }
-            else
-            {
-                logbookForm.Show();
-            }
-
+            LogbookForm logbookForm = new LogbookForm();
+            logbookForm.ShowDialog();
         }
 
         private void logHistoryButton_Click(object sender, EventArgs e)
@@ -73,6 +62,15 @@ namespace LogBook
             Form loginForm = new LoginForm();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            LogHistoryForm logHistoryForm = new LogHistoryForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
+            logHistoryForm.BringToFront();
+            this.mainPanel.Controls.Add(logHistoryForm);
+            logHistoryForm.Show();
         }
     }
 }
