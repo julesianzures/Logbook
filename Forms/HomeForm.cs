@@ -12,6 +12,7 @@ namespace LogBook
         {
             InitializeComponent();
             WelcomeEmployee();
+            ShowLogHistory();
         }
 
         private void WelcomeEmployee()
@@ -64,7 +65,7 @@ namespace LogBook
             this.Hide();
         }
 
-        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        private void ShowLogHistory()
         {
             mainPanel.Controls.Clear();
             LogHistoryForm logHistoryForm = new LogHistoryForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };

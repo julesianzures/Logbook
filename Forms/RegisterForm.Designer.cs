@@ -39,7 +39,7 @@ namespace LogBook
             // 
             // logbookLabel
             // 
-            this.logbookLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.logbookLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.logbookLabel.AutoSize = true;
             this.logbookLabel.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logbookLabel.Location = new System.Drawing.Point(201, 82);
@@ -51,7 +51,7 @@ namespace LogBook
             // 
             // nameLabel
             // 
-            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.nameLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameLabel.AutoSize = true;
             this.nameLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.Location = new System.Drawing.Point(153, 197);
@@ -62,7 +62,7 @@ namespace LogBook
             // 
             // namePanel
             // 
-            this.namePanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.namePanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.namePanel.BackColor = System.Drawing.Color.DimGray;
             this.namePanel.Location = new System.Drawing.Point(157, 221);
             this.namePanel.Name = "namePanel";
@@ -71,7 +71,7 @@ namespace LogBook
             // 
             // nameTextBox
             // 
-            this.nameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.nameTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTextBox.Location = new System.Drawing.Point(204, 193);
@@ -82,7 +82,7 @@ namespace LogBook
             // 
             // registerButton
             // 
-            this.registerButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.registerButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.registerButton.BackColor = System.Drawing.Color.Black;
             this.registerButton.FlatAppearance.BorderSize = 0;
             this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -98,7 +98,7 @@ namespace LogBook
             // 
             // loginInInsteadButton
             // 
-            this.loginInInsteadButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.loginInInsteadButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loginInInsteadButton.BackColor = System.Drawing.Color.Transparent;
             this.loginInInsteadButton.FlatAppearance.BorderSize = 0;
             this.loginInInsteadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -127,7 +127,6 @@ namespace LogBook
             this.Controls.Add(this.namePanel);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.logbookLabel);
-            this.MaximizeBox = false;
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "REGISTER FORM";

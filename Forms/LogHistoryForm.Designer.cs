@@ -65,9 +65,9 @@ namespace LogBook
             this.logListView.GridLines = true;
             this.logListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.logListView.HideSelection = false;
-            this.logListView.Location = new System.Drawing.Point(28, 100);
+            this.logListView.Location = new System.Drawing.Point(64, 100);
             this.logListView.Name = "logListView";
-            this.logListView.Size = new System.Drawing.Size(547, 307);
+            this.logListView.Size = new System.Drawing.Size(473, 307);
             this.logListView.TabIndex = 2;
             this.logListView.TabStop = false;
             this.logListView.UseCompatibleStateImageBehavior = false;

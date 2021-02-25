@@ -50,7 +50,7 @@
             this.buttonsPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.buttonsPanel.Location = new System.Drawing.Point(0, 0);
             this.buttonsPanel.Name = "buttonsPanel";
-            this.buttonsPanel.Size = new System.Drawing.Size(165, 437);
+            this.buttonsPanel.Size = new System.Drawing.Size(165, 506);
             this.buttonsPanel.TabIndex = 0;
             // 
             // logoutButton
@@ -109,7 +109,7 @@
             this.exitButton.BackColor = System.Drawing.Color.Gainsboro;
             this.exitButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.Color.Black;
-            this.exitButton.Location = new System.Drawing.Point(-2, 393);
+            this.exitButton.Location = new System.Drawing.Point(-2, 462);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(165, 40);
             this.exitButton.TabIndex = 3;
@@ -120,22 +120,19 @@
             // 
             // mainPanel
             // 
-            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(165, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(422, 437);
+            this.mainPanel.Size = new System.Drawing.Size(529, 506);
             this.mainPanel.TabIndex = 1;
-            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(587, 437);
+            this.ClientSize = new System.Drawing.Size(694, 506);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.buttonsPanel);
             this.Name = "HomeForm";
