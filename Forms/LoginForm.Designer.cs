@@ -42,7 +42,7 @@ namespace LogBook
             // 
             // logbookLabel
             // 
-            this.logbookLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.logbookLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.logbookLabel.AutoSize = true;
             this.logbookLabel.Font = new System.Drawing.Font("Franklin Gothic Heavy", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logbookLabel.Location = new System.Drawing.Point(202, 82);
@@ -54,7 +54,7 @@ namespace LogBook
             // 
             // idIcon
             // 
-            this.idIcon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.idIcon.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.idIcon.Image = ((System.Drawing.Image)(resources.GetObject("idIcon.Image")));
             this.idIcon.Location = new System.Drawing.Point(158, 185);
             this.idIcon.Name = "idIcon";
@@ -65,7 +65,7 @@ namespace LogBook
             // 
             // idPanel
             // 
-            this.idPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.idPanel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.idPanel.BackColor = System.Drawing.Color.DimGray;
             this.idPanel.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idPanel.Location = new System.Drawing.Point(158, 221);
@@ -75,7 +75,7 @@ namespace LogBook
             // 
             // loginButton
             // 
-            this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loginButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.loginButton.BackColor = System.Drawing.Color.Black;
             this.loginButton.FlatAppearance.BorderSize = 0;
             this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -91,7 +91,7 @@ namespace LogBook
             // 
             // dontHaveAnAccountText
             // 
-            this.dontHaveAnAccountText.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dontHaveAnAccountText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dontHaveAnAccountText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dontHaveAnAccountText.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dontHaveAnAccountText.Location = new System.Drawing.Point(175, 307);
@@ -102,7 +102,7 @@ namespace LogBook
             // 
             // registerHereButton
             // 
-            this.registerHereButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.registerHereButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.registerHereButton.BackColor = System.Drawing.Color.Transparent;
             this.registerHereButton.FlatAppearance.BorderSize = 0;
             this.registerHereButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -120,7 +120,7 @@ namespace LogBook
             // 
             // employeeIdTextBox
             // 
-            this.employeeIdTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.employeeIdTextBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.employeeIdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.employeeIdTextBox.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeIdTextBox.ForeColor = System.Drawing.Color.Silver;
@@ -146,6 +146,7 @@ namespace LogBook
             this.Controls.Add(this.idPanel);
             this.Controls.Add(this.idIcon);
             this.Controls.Add(this.logbookLabel);
+            this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LOGIN FORM";

@@ -17,8 +17,6 @@ namespace LogBook
 
         private void ConvertLogCsv()
         {
-            logListView.Items.Clear();
-
             string[] csvLine = File.ReadAllLines($"{Environment.CurrentDirectory}\\log.csv");
 
             var log = new List<Log>();
@@ -27,9 +25,8 @@ namespace LogBook
             {
                 Log loghistory = new Log(csvLine[i]);
                 log.Add(loghistory);
-                logListView.Items.Add(loghistory.TolistViewItem()); 
+                logListView.Items.Add(loghistory.TolistViewItem());
             }
-            
         }
 
         private void DisplayInfoFromCurrentUser()

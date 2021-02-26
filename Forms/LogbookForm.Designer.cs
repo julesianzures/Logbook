@@ -40,6 +40,7 @@ namespace LogBook
             this.addButton = new System.Windows.Forms.Button();
             this.tempLabel = new System.Windows.Forms.Label();
             this.lastPlaceVisitedLabel = new System.Windows.Forms.Label();
+            this.closeButton = new System.Windows.Forms.Button();
             this.logbookGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@ namespace LogBook
             this.logbookGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.logbookGroupBox.Controls.Add(this.closeButton);
             this.logbookGroupBox.Controls.Add(this.informationLabel);
             this.logbookGroupBox.Controls.Add(this.displayTimeLabel);
             this.logbookGroupBox.Controls.Add(this.displayDateLabel);
@@ -181,6 +183,21 @@ namespace LogBook
             this.lastPlaceVisitedLabel.TabIndex = 13;
             this.lastPlaceVisitedLabel.Text = "LAST PLACE VISITED:";
             // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.closeButton.BackColor = System.Drawing.Color.White;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.closeButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.ForeColor = System.Drawing.Color.Black;
+            this.closeButton.Location = new System.Drawing.Point(224, 233);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(90, 40);
+            this.closeButton.TabIndex = 42;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // LogbookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,5 +231,6 @@ namespace LogBook
         private System.Windows.Forms.Label tempLabel;
         private System.Windows.Forms.Label lastPlaceVisitedLabel;
         private System.Windows.Forms.Label informationLabel;
+        public System.Windows.Forms.Button closeButton;
     }
 }

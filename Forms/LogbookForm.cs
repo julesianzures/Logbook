@@ -15,12 +15,12 @@ namespace LogBook
             InitializeComponent();
             var dateAndTime = DateTime.Now;
             displayDateLabel.Text = ($"{dateAndTime.ToString("yyyy-MM-dd")}");
-            displayTimeLabel.Text = ($"{dateAndTime.ToString("HH: mm")}");
-            
+            displayTimeLabel.Text = ($"{dateAndTime.ToString("HH: mm")}");            
         }
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            
             string storedDate = TemporaryStorage.StoredDate;
             Console.WriteLine("storedDate," + storedDate);
             if (tempTextBox.Text == "")

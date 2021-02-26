@@ -41,20 +41,12 @@ namespace LogBook
         {
             LogbookForm logbookForm = new LogbookForm();
             logbookForm.ShowDialog();
-        }
-
-        private void logHistoryButton_Click(object sender, EventArgs e)
-        {
-            mainPanel.Controls.Clear();
-            LogHistoryForm logHistoryForm = new LogHistoryForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
-            logHistoryForm.BringToFront();
-            this.mainPanel.Controls.Add(logHistoryForm);
-            logHistoryForm.Show();
+            this.Hide();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); 
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -65,14 +57,17 @@ namespace LogBook
             this.Hide();
         }
 
+
         private void ShowLogHistory()
         {
             mainPanel.Controls.Clear();
             LogHistoryForm logHistoryForm = new LogHistoryForm { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
             logHistoryForm.BringToFront();
+            logHistoryForm.Update();
             this.mainPanel.Controls.Add(logHistoryForm);
             logHistoryForm.Show();
         }
+
     }
 }
     
