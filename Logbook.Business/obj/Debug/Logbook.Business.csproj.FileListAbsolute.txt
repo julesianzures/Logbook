@@ -1,0 +1,6 @@
+C:\Users\JulesAnzures\source\repos\Logbook.Business\obj\Debug\Logbook.Business.csprojAssemblyReference.cache
+C:\Users\JulesAnzures\source\repos\Logbook.Business\obj\Debug\Logbook.Business.csproj.CoreCompileInputs.cache
+C:\Users\JulesAnzures\source\repos\Logbook.Business\bin\Debug\Logbook.Business.dll
+C:\Users\JulesAnzures\source\repos\Logbook.Business\bin\Debug\Logbook.Business.pdb
+C:\Users\JulesAnzures\source\repos\Logbook.Business\obj\Debug\Logbook.Business.dll
+C:\Users\JulesAnzures\source\repos\Logbook.Business\obj\Debug\Logbook.Business.pdb
