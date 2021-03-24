@@ -6,6 +6,7 @@ namespace Logbook
 {
     public partial class RegisterForm : Form
     {
+        EmployeeService employeeService = new EmployeeService();
         public RegisterForm()
         {
             InitializeComponent();
@@ -26,10 +27,9 @@ namespace Logbook
                 return;
             }
 
-            int id = EmployeeAccountManagerServices.RegisterEmployee(name);
-            
+            int employeeId = employeeService.RegisterEmployee(name);
                                                             
-            MessageBox.Show($"You are now registered. Id: {id}");
+            MessageBox.Show($"You are now registered. ID: {employeeId}");
         }
 
         private void loginInInsteadButton_Click(object sender, EventArgs e)

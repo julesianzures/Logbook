@@ -2,12 +2,15 @@
 using System.Windows.Forms;
 using Logbook.Business.Models;
 using Logbook.Business.Services;
+using Logbook.TemporaryStorage;
+
 
 namespace Logbook
 {
     public partial class LogbookForm : Form
     {
-
+        LogService logService = new LogService();
+      
         public LogbookForm()
         {
             InitializeComponent();
@@ -23,7 +26,7 @@ namespace Logbook
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            string storedDate = TemporaryStorage.StoredDate;        
+            string storedDate = TemporaryIdAndDate.StoredDate;        
          
             if (tempTextBox.Text == "")
             {
@@ -45,13 +48,18 @@ namespace Logbook
         }
 
         public void AddInfo()           
-        {                           
+        {
+            EmployeeService employeeService = new EmployeeService();
+
+            int employeeId = TemporaryIdAndDate.EmployeeId;
+            Employee employee = employeeService.GetById(employeeId);
+
             string date = displayDateLabel.Text;
             string time = displayTimeLabel.Text;
             string temp = tempTextBox.Text;
             string lastPlaceVisited = lastPlaceTextBox.Text;
 
-            LogServices.AddLogInfo(date, time, temp, lastPlaceVisited);
+            logService.AddLogInfo(employeeId, date, time, temp, lastPlaceVisited);
 
             tempTextBox.Clear();
             lastPlaceTextBox.Clear();

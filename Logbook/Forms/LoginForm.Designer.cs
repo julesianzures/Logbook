@@ -34,9 +34,9 @@ namespace Logbook
             this.idIcon = new System.Windows.Forms.PictureBox();
             this.idPanel = new System.Windows.Forms.Panel();
             this.loginButton = new System.Windows.Forms.Button();
-            this.dontHaveAnAccountText = new System.Windows.Forms.TextBox();
             this.registerHereButton = new System.Windows.Forms.Button();
             this.employeeIdTextBox = new System.Windows.Forms.TextBox();
+            this.dontHaveAnIdYetLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.idIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,17 +89,6 @@ namespace Logbook
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // dontHaveAnAccountText
-            // 
-            this.dontHaveAnAccountText.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.dontHaveAnAccountText.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dontHaveAnAccountText.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dontHaveAnAccountText.Location = new System.Drawing.Point(175, 307);
-            this.dontHaveAnAccountText.Name = "dontHaveAnAccountText";
-            this.dontHaveAnAccountText.Size = new System.Drawing.Size(150, 19);
-            this.dontHaveAnAccountText.TabIndex = 6;
-            this.dontHaveAnAccountText.Text = "Don\'t have an Id yet?";
-            // 
             // registerHereButton
             // 
             this.registerHereButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -108,7 +97,7 @@ namespace Logbook
             this.registerHereButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerHereButton.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerHereButton.ForeColor = System.Drawing.Color.DimGray;
-            this.registerHereButton.Location = new System.Drawing.Point(317, 303);
+            this.registerHereButton.Location = new System.Drawing.Point(322, 303);
             this.registerHereButton.Name = "registerHereButton";
             this.registerHereButton.Size = new System.Drawing.Size(111, 29);
             this.registerHereButton.TabIndex = 7;
@@ -129,8 +118,18 @@ namespace Logbook
             this.employeeIdTextBox.Name = "employeeIdTextBox";
             this.employeeIdTextBox.Size = new System.Drawing.Size(244, 28);
             this.employeeIdTextBox.TabIndex = 9;
-            this.employeeIdTextBox.Text = "Enter Id number ";
+            this.employeeIdTextBox.Text = "Enter ID number ";
             this.employeeIdTextBox.Enter += new System.EventHandler(this.employeeIdTextBox_Enter);
+            // 
+            // dontHaveAnIdYetLabel
+            // 
+            this.dontHaveAnIdYetLabel.AutoSize = true;
+            this.dontHaveAnIdYetLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dontHaveAnIdYetLabel.Location = new System.Drawing.Point(170, 307);
+            this.dontHaveAnIdYetLabel.Name = "dontHaveAnIdYetLabel";
+            this.dontHaveAnIdYetLabel.Size = new System.Drawing.Size(152, 21);
+            this.dontHaveAnIdYetLabel.TabIndex = 10;
+            this.dontHaveAnIdYetLabel.Text = "Don\'t have an ID yet?";
             // 
             // LoginForm
             // 
@@ -139,9 +138,9 @@ namespace Logbook
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(587, 437);
+            this.Controls.Add(this.dontHaveAnIdYetLabel);
             this.Controls.Add(this.employeeIdTextBox);
             this.Controls.Add(this.registerHereButton);
-            this.Controls.Add(this.dontHaveAnAccountText);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.idPanel);
             this.Controls.Add(this.idIcon);
@@ -162,9 +161,9 @@ namespace Logbook
         private System.Windows.Forms.PictureBox idIcon;
         private System.Windows.Forms.Panel idPanel;
         private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.TextBox dontHaveAnAccountText;
         private System.Windows.Forms.Button registerHereButton;
         private System.Windows.Forms.TextBox employeeIdTextBox;
+        private System.Windows.Forms.Label dontHaveAnIdYetLabel;
     }
 }
 
