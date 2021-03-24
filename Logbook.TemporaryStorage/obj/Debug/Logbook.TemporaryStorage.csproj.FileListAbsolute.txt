@@ -1,0 +1,17 @@
+C:\Users\JulesAnzures\source\repos\LogbookProject\Logbook.TemporaryStorage\bin\Debug\Logbook.TemporaryStorage.dll
+C:\Users\JulesAnzures\source\repos\LogbookProject\Logbook.TemporaryStorage\bin\Debug\Logbook.TemporaryStorage.pdb
+C:\Users\JulesAnzures\source\repos\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.csprojAssemblyReference.cache
+C:\Users\JulesAnzures\source\repos\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.csproj.CoreCompileInputs.cache
+C:\Users\JulesAnzures\source\repos\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.dll
+C:\Users\JulesAnzures\source\repos\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.pdb
+C:\LogbookProject\Logbook.TemporaryStorage\bin\Debug\Logbook.TemporaryStorage.dll
+C:\LogbookProject\Logbook.TemporaryStorage\bin\Debug\Logbook.TemporaryStorage.pdb
+C:\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.csprojAssemblyReference.cache
+C:\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.csproj.CoreCompileInputs.cache
+C:\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.dll
+C:\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.pdb
+C:\LogbookProject\Logbook.TemporaryStorage\bin\Debug\Dapper.dll
+C:\LogbookProject\Logbook.TemporaryStorage\bin\Debug\DapperExtensions.dll
+C:\LogbookProject\Logbook.TemporaryStorage\bin\Debug\Dapper.xml
+C:\LogbookProject\Logbook.TemporaryStorage\bin\Debug\DapperExtensions.pdb
+C:\LogbookProject\Logbook.TemporaryStorage\obj\Debug\Logbook.TemporaryStorage.csproj.CopyComplete
