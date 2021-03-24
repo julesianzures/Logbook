@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.IO;
+using Logbook.TemporaryStorage;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+using Logbook.Business.Services;
 using Logbook.Business.Models;
 
 namespace Logbook
 {
     public partial class HomeForm : Form
     {
-
         public HomeForm()
         {
             InitializeComponent();
@@ -17,25 +20,14 @@ namespace Logbook
 
         private void WelcomeEmployee()
         {
-            string temporaryId = TemporaryStorage.EmployeeId.ToString();
-            string employeePath = $"{Environment.CurrentDirectory}\\employees.csv";
-            using (StreamReader streamReader = new StreamReader(employeePath))
-            {
-                string csvLine = streamReader.ReadLine();
-                bool userFound = false;
-                while (csvLine != null)
-                {
-                    string[] substring = csvLine.Split(',');
-                    if (substring[0] == temporaryId)
-                    {
-                        Console.WriteLine(substring);
-                        nameLabel.Text = ($"Hello, {substring[1]}");
-                        userFound = true;
-                    }
-                    csvLine = streamReader.ReadLine();
-                }
-            }
+            EmployeeService employeeService = new EmployeeService();
+
+            int temporaryId = TemporaryIdAndDate.EmployeeId;
+            Employee employee = employeeService.GetById(temporaryId);
+
+            nameLabel.Text = ($"Hello, {employee.Name}");
         }
+
         private void logButton_Click(object sender, EventArgs e)
         {
             LogbookForm logbookForm = new LogbookForm();

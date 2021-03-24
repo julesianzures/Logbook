@@ -84,9 +84,8 @@
             this.nameLabel.Font = new System.Drawing.Font("Franklin Gothic Book", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.Location = new System.Drawing.Point(26, 14);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(128, 24);
+            this.nameLabel.Size = new System.Drawing.Size(0, 24);
             this.nameLabel.TabIndex = 58;
-            this.nameLabel.Text = "Hello, Marshall";
             this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // logButton

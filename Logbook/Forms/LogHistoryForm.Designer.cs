@@ -75,7 +75,7 @@ namespace Logbook
             // 
             // employeeId
             // 
-            this.employeeId.Text = "Id";
+            this.employeeId.Text = "EmployeeId";
             this.employeeId.Width = 0;
             // 
             // date

@@ -2,11 +2,16 @@
 using System.Windows.Forms;
 using System.Drawing;
 using Logbook.Business.Services;
+using Logbook.Business.Interface;
+using Logbook.Business.Models;
 
 namespace Logbook
 {
     public partial class LoginForm : Form
     {
+        EmployeeService employeeService = new EmployeeService();
+        
+
         public LoginForm()
         {
             InitializeComponent();
@@ -20,20 +25,18 @@ namespace Logbook
         public void Login()
         {
             string employeeId = employeeIdTextBox.Text;
-
             if (employeeId == string.Empty)
             {
                 MessageBox.Show("Input field is empty. Try again.");
                 return;
             }
-            
-            else 
+            else
             {
-                int? loggedInEmployeeId = EmployeeAccountManagerServices.LoginEmployee(Convert.ToInt32(employeeId));
-                
-                if (loggedInEmployeeId == null)
+                Employee employee = employeeService.LoginEmployee(Convert.ToInt32(employeeId));
+
+                if (employee == null)
                 {
-                    MessageBox.Show("No users found.");
+                    MessageBox.Show("User not registered.");
                     return;
                 }
                 
